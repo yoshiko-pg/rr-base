@@ -1,21 +1,24 @@
 /* flow */
-const AsyncAwaitPlugin = require("webpack-async-await") ;
+const AsyncAwaitPlugin = require("webpack-async-await");
 
 module.exports = {
-  entry: "./src/main.js",
+  entry: "./src/main.jsx",
   output: {
     path: "public",
-    filename: "bundle.js"
+    filename: "bundle.js",
   },
   plugins: [
-    new AsyncAwaitPlugin({})
+    new AsyncAwaitPlugin({}),
   ],
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         use: "babel-loader",
-        exclude: /node_modules/
+        exclude: /node_modules/,
       }
     ]
   }
