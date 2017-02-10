@@ -1,7 +1,16 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 
-export default () => {
+import store from '../store';
+
+const RootComponent = () => {
+  const {hello} = store.getState();
+
   return (
-    <h1>Hello app!!</h1>
+    <Provider store={store}>
+      <h1>{hello}</h1>
+    </Provider>
   );
-}
+};
+
+export default RootComponent;
