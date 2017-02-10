@@ -1,7 +1,6 @@
 {
-  "name": "client-proj-20161231",
+  "name": "@yoshiko-pg/react-redux-base",
   "private": true,
-  "license": "MIT",
   "scripts": {
     "start": "yarn run watch:css & yarn run watch:js & http-server public -p 3355 -c-1",
     "build:js": "webpack",
